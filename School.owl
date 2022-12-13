@@ -1,0 +1,177 @@
+@prefix : <http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School> .
+
+<http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School> rdf:type owl:Ontology ;
+                                                                             rdfs:comment "This is an antology about School"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Admits
+:Admits rdf:type owl:ObjectProperty ;
+        rdfs:domain :School ;
+        rdfs:range :Student ;
+        rdfs:comment "School admits Students"@en .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Learns
+:Learns rdf:type owl:ObjectProperty ;
+        rdfs:domain :Student ;
+        rdfs:range :Subject ;
+        rdfs:comment "Students learns the Subjects"@en .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Teachs
+:Teachs rdf:type owl:ObjectProperty ;
+        rdfs:domain :Teacher ;
+        rdfs:range :Subject ;
+        rdfs:comment "Teacher teaches The Subject"@en .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#employs
+:employs rdf:type owl:ObjectProperty ;
+         rdfs:domain :School ;
+         rdfs:range :Staff ;
+         rdfs:comment "School employs staff"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#JoiniedON
+:JoiniedON rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "Indicates the joining date of subject the student"@en .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#StaffID
+:StaffID rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Staff ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#StudentID
+:StudentID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Teach
+:Teach rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Teacher ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Administrative
+:Administrative rdf:type owl:Class ;
+                owl:equivalentClass :Maintence ;
+                rdfs:subClassOf :None-Teaching .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Govt
+:Govt rdf:type owl:Class ;
+      rdfs:subClassOf :School .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#House-Keeping
+:House-Keeping rdf:type owl:Class ;
+               rdfs:subClassOf :None-Teaching .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Junior-Student
+:Junior-Student rdf:type owl:Class ;
+                rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Maintence
+:Maintence rdf:type owl:Class ;
+           rdfs:subClassOf :None-Teaching .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#None-Teaching
+:None-Teaching rdf:type owl:Class ;
+               rdfs:subClassOf :Staff .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Private
+:Private rdf:type owl:Class ;
+         rdfs:subClassOf :School .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#School
+:School rdf:type owl:Class ;
+        rdfs:comment "This class denotes the school"@en .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Senior-Student
+:Senior-Student rdf:type owl:Class ;
+                rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Staff
+:Staff rdf:type owl:Class ;
+       owl:disjointWith :Student .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Student
+:Student rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Subject
+:Subject rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Supporting
+:Supporting rdf:type owl:Class ;
+            rdfs:subClassOf :None-Teaching .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Teacher
+:Teacher rdf:type owl:Class ;
+         rdfs:subClassOf :Staff .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Azam
+:Azam rdf:type owl:NamedIndividual ,
+               :Student ;
+      :JoiniedON "2023-01-12T09:00:00"^^xsd:dateTime ;
+      :StudentID "S2023"^^xsd:string .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Internatinal-School
+:Internatinal-School rdf:type owl:NamedIndividual ,
+                              :School ;
+                     :Admits :Azam ;
+                     :employs :Professor_Seok_WonLee .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Nat
+:Nat rdf:type owl:NamedIndividual ,
+              :Teacher ;
+     owl:sameAs :Professor_Seok_WonLee .
+
+
+###  http://www.semanticweb.org/labsolutions_support/ontologies/2022/11/School#Professor_Seok_WonLee
+:Professor_Seok_WonLee rdf:type owl:NamedIndividual ,
+                                :Teacher ;
+                       :Teachs :Azam ;
+                       :Teach "Computer sciences"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
